@@ -49,9 +49,15 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        child: Container(
-      padding: EdgeInsets.all(10),
+    return SingleChildScrollView(
+        child: Card(
+            child: Container(
+      padding: EdgeInsets.only(
+        top: 10,
+        left: 10,
+        right: 10,
+        bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+      ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
         TextField(
           decoration: InputDecoration(labelText: 'Title'),
@@ -95,6 +101,6 @@ class _NewTransactionState extends State<NewTransaction> {
               foregroundColor: Colors.purple,
             )),
       ]),
-    ));
+    )));
   }
 }
